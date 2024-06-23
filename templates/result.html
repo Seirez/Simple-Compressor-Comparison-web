@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compression Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ task }} Result</h1>
+    
+    <p>Elapsed Time: {{ elapsed_time }} seconds</p>
+    <p>File Size: {{ file_size }} KB</p>
+    
+    <div class="content">
+        <a href="{{ download_url }}" download>Download</a>
+        <br><br>
+        <a href="{{ url_for('index') }}">Go back to the main page</a>
+    </div>
+</body>
+</html>

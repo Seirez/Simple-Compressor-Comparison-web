@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compression Algorithm Comparison</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Compression Algorithm Comparison</h1>
+    
+    <button class="accordion">Audio Compression</button>
+    <div class="panel">
+        <form action="/compress_audio" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Audio File:</label>
+            <input type="file" name="file" required>
+            <label for="algorithm">Choose Compression Algorithm:</label>
+            <select name="algorithm" required>
+                <option value="gzip">Gzip</option>
+                <option value="lzma">Lzma</option>
+            </select>
+            <button type="submit">Compress</button>
+        </form>
+    </div>
+
+    <button class="accordion">Audio Decompression</button>
+    <div class="panel">
+        <form action="/decompress_audio" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Compressed Audio File:</label>
+            <input type="file" name="file" required>
+            <label for="algorithm">Choose Decompression Algorithm:</label>
+            <select name="algorithm" required>
+                <option value="gzip">Gzip</option>
+                <option value="lzma">Lzma</option>
+            </select>
+            <button type="submit">Decompress</button>
+        </form>
+    </div>
+
+    <button class="accordion">Image Compression</button>
+    <div class="panel">
+        <form action="/compress_image" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Image File:</label>
+            <input type="file" name="file" required>
+            <label for="algorithm">Choose Compression Algorithm:</label>
+            <select name="algorithm" required>
+                <option value="gzip">Gzip</option>
+                <option value="lzma">Lzma</option>
+            </select>
+            <button type="submit">Compress</button>
+        </form>
+    </div>
+
+    <button class="accordion">Image Decompression</button>
+    <div class="panel">
+        <form action="/decompress_image" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Compressed Image File:</label>
+            <input type="file" name="file" required>
+            <label for="algorithm">Choose Decompression Algorithm:</label>
+            <select name="algorithm" required>
+                <option value="gzip">Gzip</option>
+                <option value="lzma">Lzma</option>
+            </select>
+            <button type="submit">Decompress</button>
+        </form>
+    </div>
+
+    <button class="accordion">Video Compression</button>
+    <div class="panel">
+        <form action="/compress_video" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Video File:</label>
+            <input type="file" name="file" required>
+            <label for="algorithm">Choose Compression Algorithm:</label>
+            <select name="algorithm" required>
+                <option value="gzip">Gzip</option>
+                <option value="lzma">Lzma</option>
+            </select>
+            <button type="submit">Compress</button>
+        </form>
+    </div>
+
+    <button class="accordion">Video Decompression</button>
+    <div class="panel">
+        <form action="/decompress_video" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Compressed Video File:</label>
+            <input type="file" name="file" required>
+            <label for="algorithm">Choose Decompression Algorithm:</label>
+            <select name="algorithm" required>
+                <option value="gzip">Gzip</option>
+                <option value="lzma">Lzma</option>
+            </select>
+            <button type="submit">Decompress</button>
+        </form>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
